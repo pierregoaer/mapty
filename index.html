@@ -191,28 +191,22 @@
     <div class="info-modal hidden">
       <button class="close-info-modal-button">&times;</button>
       <h1>Welcome to<img src="/images/logo_black.png" alt="Mapty" class="logo" /></h1>
-      <p>
-        Mapty is a little tool that helps you log your running or cycling
-        workouts based on location. Pretty simple, click on the map, select the
-        type of workout, fill out the details of your workout and press enter!
-        Mapty will create a workout on the map and in the sidebar.
-      </p>
-      <p>
-        This project originated from a Udemy course I took. In particular, this app was a great way to improve my Object-Oriented Programing skills. It is made of 4 main classes:
+      <p>Mapty is a little tool that helps you log your running or cycling workouts based on location. Pretty simple, click on the map, select the type of workout, fill out the details of your workout and press enter! Mapty will create a workout on the map and in the sidebar.</p>
+      <p>This project originated from a Udemy course I took. In particular, this app was a great way to improve my Object-Oriented Programming skills. It is made of 4 main classes:
         <ul>
-          <li><strong>An App class:</strong> this is the main class that makes the entire app work. It creates and executes all the different methods needed. Some notables methods are:
+          <li><strong>An App class:</strong> this is the main class that makes the entire app work. It creates and executes all the different methods needed. Some notable methods are:
           <ul>
             <li><strong>.getPosition() and .loadMap(position):</strong> get the geographic coordinates of the user, and render a map of that location using the <a href="https://leafletjs.com/" target="_blank">Leaflet library</a>.</li>
             <li><strong>.toggleElevationField():</strong> allows to choose the type of workout (running or cycling).</li>
             <li><strong>.showForm():</strong> displays the input form in the sidebar to create a new workout.</li>
-            <li><strong>.newWorktout():</strong> this is the main method in this app, it creates a new workout after the form has been submitted. It first creates a new Running or Cycling objects depending on the the form and then calls a list of methods. These methods push the workout to a workouts array, display the workout in the sidebar and on the map, hide the form, add the workouts to locale storage and update the totals at the bottom of the sidebar.</li>
-            <li><strong>.goToMarker():</strong> allows user the recenter the map when they click on a workout from the sidebar. This was a fun one to implement and required to look deeper into Leaflet docs.</li>
+            <li><strong>.newWorktout():</strong> this is the main method in this app, it creates a new workout after the form has been submitted. It first creates a new Running or Cycling object depending on the form and then calls a list of methods. These methods push the workout to a workouts array, display the workout in the sidebar and on the map, hide the form, add the workouts to locale storage and update the totals at the bottom of the sidebar.</li>
+            <li><strong>.goToMarker():</strong> allows users to recenter the map when they click on a workout from the sidebar. This was a fun one to implement and required me to look deeper into Leaflet docs.</li>
             <li><strong>.deleteWorkout():</strong> allows the user to delete a workout using the delete button in the sidebar. When deleting, the workout is removed from the workouts array, the HTML element is removed, the marker on the map is removed, the totals are recalculated and the new workouts array is added to local storage.</li>
             <li><strong>.openModal() and .closeModal():</strong> handle the opening and closing of the window you're reading right now.</li>
             <li>The entire code with more explanations is available on <strong>GitHub</strong>. Scroll to the bottom to find the link.</li>
           </ul>
           </li>
-          <li><strong>A Workout class:</strong> this class creates the properties that are share by both child classes such as the date, id, distance, duration and geographic coordinates.</li>
+          <li><strong>A Workout class:</strong> this class creates the properties that are shared by both child classes (Running and Cycling) such as the date, id, distance, duration and geographic coordinates.</li>
           <li><strong>A Running class</strong> (child class of Workout): this class creates the properties that are specific to the type of activity selected such as the cadence, the pace and the name.</li>
           <li><strong>A Cycling class</strong> (child class of Workout): this class creates the properties that are specific to the type of activity selected such as the elevation gain, the speed and the name.</li>
         </ul>

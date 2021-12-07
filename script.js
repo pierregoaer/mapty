@@ -1,14 +1,12 @@
 'use strict';
 
-// prettier-ignore
-// const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
+// Only used when in live server because Firefox requires HTTPS to enable geolocation
 const toronto = {
-  coords: {
-    latitude: 43.6500418,
-    longitude: -79.3916043,
-  }
-}
+	coords: {
+		latitude: 43.6500418,
+		longitude: -79.3916043,
+	},
+};
 
 const sidebar = document.querySelector('.sidebar');
 const map = document.querySelector('#map');
@@ -127,11 +125,11 @@ class App {
 	}
 
 	_loadMap(position) {
-		// Use this toronto coords to be able to use in Firefox
-		const { latitude, longitude } = toronto.coords;
+		// Use this toronto coords to be able to use in Firefox in testing mode (Firefox requires HTTPS to enable geolocation)
+		// const { latitude, longitude } = toronto.coords;
 
 		// To use the actual geolocation, use position
-		// const { latitude, longitude } = position.coords;
+		const { latitude, longitude } = position.coords;
 		this.#latLng = [latitude, longitude];
 
 		// Binding this to _loadMap makes this return the current object
